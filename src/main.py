@@ -37,9 +37,7 @@ if __name__ == "__main__":
     pg.mixer.music.play(-1)
 
     while running:
-        delta_time = clock.tick(fps)
-        delta_time /= 1000  # clock.tick returns the time in milliseconds
-        time_elapsed += delta_time
+        time_elapsed += clock.tick(fps) / 1000  # clock.tick returns the time in milliseconds
 
         for event in pg.event.get():
             if event.type == pg.QUIT:
